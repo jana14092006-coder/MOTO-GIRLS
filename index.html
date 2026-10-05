@@ -1,10 +1,309 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="de">
 <head>
   <meta charset="UTF-8">
-  <title>MOTO GIRLS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOTO GIRLS | Member Registration</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #050505;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    .container {
+      width: min(92%, 650px);
+      margin: auto;
+      padding: 55px 0 80px;
+    }
+
+    .top {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .brand {
+      font-size: 13px;
+      letter-spacing: 5px;
+      color: #999;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: 42px;
+      letter-spacing: 2px;
+      line-height: 1;
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .line {
+      width: 55px;
+      height: 2px;
+      background: white;
+      margin: 25px auto;
+    }
+
+    .section {
+      margin-top: 38px;
+    }
+
+    h2 {
+      font-size: 17px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+    }
+
+    label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: #aaa;
+      margin: 18px 0 7px;
+      text-transform: uppercase;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      background: #0e0e0e;
+      border: 1px solid #292929;
+      border-radius: 7px;
+      padding: 15px;
+      color: white;
+      font-size: 16px;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #fff;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .checkbox {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-top: 18px;
+      color: #bbb;
+      font-size: 12px;
+    }
+
+    .checkbox input {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 35px;
+      padding: 17px;
+      border: none;
+      border-radius: 7px;
+      background: white;
+      color: black;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: .85;
+    }
+
+    .legal {
+      margin-top: 45px;
+      padding-top: 25px;
+      border-top: 1px solid #222;
+      color: #777;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 55px;
+      color: #555;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      .container {
+        padding-top: 40px;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  MOTO GIRLS
+
+<div class="container">
+
+  <header class="top">
+    <div class="brand">MOTORSPORT AESTHETICS · 0711</div>
+
+    <h1>MOTO GIRLS</h1>
+
+    <div class="line"></div>
+
+    <p class="subtitle">
+      OFFICIAL MEMBER REGISTRATION
+    </p>
+  </header>
+
+
+  <form id="memberForm">
+
+    <div class="section">
+      <h2>01 — Über dich</h2>
+
+      <label>Vorname *</label>
+      <input type="text" name="firstname" required>
+
+      <label>Nachname *</label>
+      <input type="text" name="lastname" required>
+
+      <label>Geburtsdatum *</label>
+      <input type="date" name="birthday" required>
+
+      <label>Instagram</label>
+      <input type="text" name="instagram" placeholder="@username">
+
+      <label>E-Mail *</label>
+      <input type="email" name="email" required>
+
+      <label>Wohnort / Region</label>
+      <input type="text" name="region">
+    </div>
+
+
+    <div class="section">
+      <h2>02 — Dein Bike</h2>
+
+      <label>Motorrad / Modell *</label>
+      <input
+        type="text"
+        name="motorcycle"
+        placeholder="z.B. Yamaha R6"
+        required
+      >
+
+      <label>Fahrerfahrung</label>
+
+      <select name="experience">
+        <option value="">Bitte auswählen</option>
+        <option>Unter 1 Jahr</option>
+        <option>1–2 Jahre</option>
+        <option>3–5 Jahre</option>
+        <option>Mehr als 5 Jahre</option>
+      </select>
+    </div>
+
+
+    <div class="section">
+      <h2>03 — MOTO GIRLS</h2>
+
+      <label>Warum möchtest du Teil von MOTO GIRLS werden?</label>
+
+      <textarea
+        name="reason"
+        placeholder="Erzähl uns ein bisschen über dich..."
+      ></textarea>
+    </div>
+
+
+    <div class="section">
+      <h2>04 — Zustimmung</h2>
+
+      <div class="checkbox">
+        <input type="checkbox" required>
+        <span>
+          Ich habe die Community-Regeln gelesen und akzeptiere diese.
+        </span>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" required>
+        <span>
+          Ich habe die Teilnahmebedingungen und Haftungshinweise gelesen
+          und akzeptiere diese.
+        </span>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox" required>
+        <span>
+          Ich habe die Datenschutzerklärung zur Kenntnis genommen.
+        </span>
+      </div>
+
+      <div class="checkbox">
+        <input type="checkbox">
+        <span>
+          Ich bin damit einverstanden, dass Fotos und Videos von mir im
+          Zusammenhang mit MOTO GIRLS auf Social Media veröffentlicht
+          werden dürfen.
+        </span>
+      </div>
+    </div>
+
+
+    <button type="submit">
+      MEMBER APPLICATION SENDEN
+    </button>
+
+  </form>
+
+
+  <div class="legal">
+    MOTO GIRLS · 0711 · Stand Oktober 2026<br><br>
+
+    Die Teilnahme an Treffen und gemeinsamen Motorradausfahrten erfolgt
+    grundsätzlich freiwillig und auf eigene Verantwortung. Jedes Mitglied
+    ist selbst für sein Motorrad, seine Fahrweise, seine Fahrtüchtigkeit
+    sowie die Einhaltung der geltenden gesetzlichen Vorschriften
+    verantwortlich.<br><br>
+
+    Personenbezogene Daten werden ausschließlich im Rahmen der Organisation
+    und Verwaltung der MOTO GIRLS Community verarbeitet. Dazu können unter
+    anderem Name, Kontaktdaten, Social-Media-Angaben, Motorradinformationen
+    sowie Informationen zur Teilnahme an Treffen und Ausfahrten gehören.
+  </div>
+
+
+  <footer>
+    MOTO GIRLS · MOTORSPORT AESTHETICS · 0711
+  </footer>
+
+</div>
+
 </body>
 </html>
