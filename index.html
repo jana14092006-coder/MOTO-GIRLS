@@ -304,6 +304,58 @@
   </footer>
 
 </div>
+<script>
+const SUPABASE_URL = "https://fmduzmwglknwikrupmhw.supabase.co";
+const SUPABASE_KEY = sb_publishable_yisFMJp9PtRi_w9iyKjHqw_EwwIxrjI;
 
+document.getElementById("memberForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const form = event.target;
+    const formData = new FormData(form);
+
+    const data = {
+        firstname: formData.get("firstname"),
+        lastname: formData.get("lastname"),
+        birthday: formData.get("birthday"),
+        instagram: formData.get("instagram"),
+        email: formData.get("email"),
+        region: formData.get("region"),
+        motorcycle: formData.get("motorcycle"),
+        experience: formData.get("experience"),
+        reason: formData.get("reason")
+    };
+
+    try {
+        const response = await fetch(
+            SUPABASE_URL + "/rest/v1/Members",
+            {
+                method: "POST",
+                headers: {
+                    "apikey": SUPABASE_KEY,
+                    "Authorization": "Bearer " + SUPABASE_KEY,
+                    "Content-Type": "application/json",
+                    "Prefer": "return=minimal"
+                },
+                body: JSON.stringify(data)
+            }
+        );
+
+        if (!response.ok) {
+            const error = await response.text();
+            console.error(error);
+            alert("Bewerbung konnte nicht gespeichert werden.");
+            return;
+        }
+
+        alert("✓ Deine Bewerbung wurde erfolgreich gesendet!");
+        form.reset();
+
+    } catch (error) {
+        console.error(error);
+        alert("Es ist ein Fehler aufgetreten.");
+    }
+});
+</script>
 </body>
 </html>
